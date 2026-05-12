@@ -7,27 +7,34 @@ import supermercado.Producto;
 
 public class Trabajador {
 	
-	//private Double impuesto;
+	
 	//private Double totalPercibido;
 	//private Double montoImponible;
 	//private Double impuestoAPagar;
 	public List<Ingreso> ingresos = new ArrayList<Ingreso>();
 	
-	public Double porcentajeDeImpuestoAPagar; 
+	public Double porcentajeDeImpuestoAPagar=2d; 
 	
 	public Trabajador() {
 		
 	}
 	public Double getTotalPercibido() {
-		 
-		return  ;
+		Double total = 0d; 
+		for (Ingreso i : this.ingresos) {
+
+			 total+= i.monto;
+		 }
+		return  total;
 	}
 	
 	public Double getImpuestoAPagar(Double montoImponible, Double porcentajeDeImpuestoAPagar) {
 				 
-		return montoImponible * (1 - porcentajeDeImpuestoAPagar);
+		return montoImponible * porcentajeDeImpuestoAPagar;
 	}
 	
+	public Double getMontoImponible() {
+		return ;
+	}
 	
 		
 }
