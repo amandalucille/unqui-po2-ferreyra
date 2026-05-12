@@ -33,7 +33,7 @@ public class Trabajador {
 	}
 	
 	public Double getMontoImponible() {
-		return ;
+		 ;
 	}
 	
 		
