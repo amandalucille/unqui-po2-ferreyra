@@ -11,11 +11,11 @@ public class ProductoPrimeraNecesidadTest {
 	
 	@BeforeEach
 	public void setUp() {
-		leche = new ProductoPrimeraNecesidad("Leche", 8d, false);
+		leche = new ProductoPrimeraNecesidad("Leche", 8d, false, 11.0);
 	}
 	
 	@Test
 	public void testCalcularPrecio() {
-		assertEquals(7.2, leche.getPrecio());
+		assertEquals(7.12, leche.getPrecio());
 	}
 }
