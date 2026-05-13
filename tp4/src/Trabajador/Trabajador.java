@@ -27,13 +27,16 @@ public class Trabajador {
 		return  total;
 	}
 	
-	public Double getImpuestoAPagar(Double montoImponible, Double porcentajeDeImpuestoAPagar) {
+	public Double getImpuestoAPagar() {
 				 
-		return montoImponible * porcentajeDeImpuestoAPagar;
+		return  this.getMontoImponible() * porcentajeDeImpuestoAPagar;
 	}
 	
 	public Double getMontoImponible() {
-		 ;
+		Double total = 0d; 
+		for (Ingreso i : this.ingresos) {
+			total += i.getMontoImponible();
+		 return total ;
 	}
 	
 		

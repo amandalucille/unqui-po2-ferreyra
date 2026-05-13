@@ -6,8 +6,12 @@ import java.util.Date;
 		public Date mesPercepcion;
 		public String concepto;
 		public Double monto;
-
-		
+	
+	public Double getMontoImponible() {
+		return this.monto;
+		}
+	
 	}
 
+	
 	
