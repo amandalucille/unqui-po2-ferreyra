@@ -1,9 +1,15 @@
-package Trabajador;
+package trabajador;
 
 public class IngresoHsExtra extends Ingreso {
-	public int cantHoras;
+		public Double cantHsExtra;
+	
+	
+	public IngresoHsExtra(String concepto, String mes, Double monto,Double cantHsExtra) {
+		super(concepto, mes, monto);
+		this.cantHsExtra= cantHsExtra;
+	}
 
-	private Double getMontoImponible() {
+	public Double getMontoImponible() {
 		return 0d;
 		}
 	

@@ -1,4 +1,4 @@
-package Trabajador;
+package trabajador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,6 @@ import supermercado.Producto;
 public class Trabajador {
 	
 	
-	//private Double totalPercibido;
-	//private Double montoImponible;
-	//private Double impuestoAPagar;
 	public List<Ingreso> ingresos = new ArrayList<Ingreso>();
 	
 	public Double porcentajeDeImpuestoAPagar=2d; 
@@ -21,9 +18,9 @@ public class Trabajador {
 	public Double getTotalPercibido() {
 		Double total = 0d; 
 		for (Ingreso i : this.ingresos) {
-
 			 total+= i.monto;
 		 }
+		
 		return  total;
 	}
 	
@@ -36,9 +33,12 @@ public class Trabajador {
 		Double total = 0d; 
 		for (Ingreso i : this.ingresos) {
 			total += i.getMontoImponible();
-		 return total ;
+		}
+		return total;
 	}
 	
-		
+	public void addIngreso(Ingreso ingreso) {
+		this.ingresos.add(ingreso);
+	}
 }
 

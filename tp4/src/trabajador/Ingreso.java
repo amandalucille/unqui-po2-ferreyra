@@ -1,11 +1,16 @@
-package Trabajador;
+package trabajador;
 
-import java.util.Date;
 
 	public class Ingreso {
-		public Date mesPercepcion;
 		public String concepto;
+		public String mesPercepcion;
 		public Double monto;
+	
+	public Ingreso(String concepto, String mes, Double monto) { 
+	        this.concepto = concepto;
+	        this.mesPercepcion = mes;
+	        this.monto = monto;
+	    }	
 	
 	public Double getMontoImponible() {
 		return this.monto;
