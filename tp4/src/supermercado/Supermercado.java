@@ -31,7 +31,7 @@ public class Supermercado {
 			double total = 0;
 			for (Producto p : this.productos) {
 				total+= p.getPrecio();
-		}
+			}
 			return total;
 		}
 
