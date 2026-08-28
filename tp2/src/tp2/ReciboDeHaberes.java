@@ -21,7 +21,7 @@ public class ReciboDeHaberes{
         this.sueldoNeto = neto;
         this.conceptos = conceptos;
     }
-    
+
     public List<Concepto> getConceptos() {
         return this.conceptos;
     } 

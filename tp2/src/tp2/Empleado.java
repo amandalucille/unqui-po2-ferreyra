@@ -6,14 +6,12 @@ import java.util.List;
 public abstract class Empleado{
     private String nombre;
     private String direccion;
-    private boolean tieneConyuge;
     private LocalDate fechaDeNacimiento;
     private double sueldoBasico;
     
-    public Empleado(String nombre, String direccion,boolean tieneConyuge,LocalDate fechaDeNacimiento, double sueldoBasico){
+    public Empleado(String nombre, String direccion,LocalDate fechaDeNacimiento, double sueldoBasico){
         this.nombre = nombre;
         this.direccion = direccion;
-        this.tieneConyuge = tieneConyuge;
         this.fechaDeNacimiento = fechaDeNacimiento;
         this.sueldoBasico = sueldoBasico;
     }
@@ -35,5 +33,8 @@ public abstract class Empleado{
     }
     public double retenciones(){
         return this.obraSocial() + this.aportes();
+    }
+    public ReciboDeHaberes generarRecibo(LocalDate fechaEmision) {
+    	return new ReciboDeHaberes(this.nombre, this.direccion, fechaEmision, sueldoBruto(), sueldoNeto(), this.desgloceDeConceptos());
     }
 }

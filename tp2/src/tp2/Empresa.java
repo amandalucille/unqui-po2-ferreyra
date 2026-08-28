@@ -14,7 +14,7 @@ public class Empresa{
 	 public Empresa(String nombre, String cuit){
 	     this.nombre = nombre;
 	     this.cuit = cuit;
-	     this.empleados = new ArrayList<>();
+	     this.recibos = new ArrayList<>();
 	     this.empleados = new ArrayList<>();
 	 }
 	 public double totalNeto(){
@@ -30,17 +30,10 @@ public class Empresa{
 	            .mapToDouble(Empleado::retenciones).sum();
 	 }
 	 public void liquidarSueldos(){
-	     LocalDate fechaEmision = LocalDate.now();
-	     
-	     this.recibos = this.empleados.stream()
-	                        .map(emp-> new ReciboDeHaberes(
-	                          emp.getNombre(),
-	                            emp.getDireccion(),
-	                            fechaEmision,
-	                            emp.sueldoBruto(),
-	                            emp.sueldoNeto(),
-	                            emp.desgloceConceptos();
-	                            ))
-	                         .toList();
-	 }
-	}
+		 LocalDate fechaEmision = LocalDate.now();
+		 List<ReciboDeHaberes> nuevosRecibos = this.empleados.stream()
+				 											 .map(empleado -> empleado.generarRecibo(fechaEmision))
+				 											 .toList();
+		 this.recibos.addAll(nuevosRecibos);
+	 }		 
+}	 
